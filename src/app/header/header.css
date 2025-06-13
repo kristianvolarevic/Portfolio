@@ -4,10 +4,11 @@
   width: 100%;
   display: flex;
   align-items: center; /* Vertically center content */
-  padding: 1em;
-  font-family: "Lekton", monospace;
-  font-weight: 400;
-  font-style: normal;
+  padding: 2em 5em;
+}
+
+.header-left {
+  margin-right: auto;
 }
 
 /* Left side header (e.g. title) styling */
@@ -22,7 +23,6 @@
 /* Right side header (e.g. navigation) */
 .header-right {
   margin-left: auto; /* Align to the right */
-  padding-right: 5em;
 }
 
 /* Links styling */
@@ -43,4 +43,12 @@
 .header-right a.active-link {
   color: white; /* Color when active */
   cursor: auto; /* Change cursor to default when active */
+}
+
+.bg-tertiary {
+  background-color: var(--bs-secondary-bg);
+}
+
+hr {
+  margin: 0 2em;
 }

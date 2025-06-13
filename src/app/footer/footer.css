@@ -1,0 +1,16 @@
+.footer {
+  padding: 2em 5em;
+  display: flex;
+}
+
+.footer-left {
+  margin-right: auto;
+}
+
+.footer-right {
+  margin-left: auto;
+}
+
+hr {
+  margin: 0 2em;
+}
