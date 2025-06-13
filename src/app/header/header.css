@@ -1,0 +1,54 @@
+/* Header styling */
+.header {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  align-items: center; /* Vertically center content */
+  padding: 2em 5em;
+}
+
+.header-left {
+  margin-right: auto;
+}
+
+/* Left side header (e.g. title) styling */
+.header-left h1 {
+  font-weight: bold;
+}
+
+.header-left h2 {
+  font-size: medium;
+}
+
+/* Right side header (e.g. navigation) */
+.header-right {
+  margin-left: auto; /* Align to the right */
+}
+
+/* Links styling */
+.header-right a {
+  color: rgb(153, 153, 153); /* Default color */
+  text-decoration: none;
+  font-size: large;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Link hover state */
+.header-right a:hover {
+  color: white; /* On hover, change color */
+}
+
+/* Active link state */
+.header-right a.active-link {
+  color: white; /* Color when active */
+  cursor: auto; /* Change cursor to default when active */
+}
+
+.bg-tertiary {
+  background-color: var(--bs-secondary-bg);
+}
+
+hr {
+  margin: 0 2em;
+}

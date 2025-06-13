@@ -1,0 +1,39 @@
+.body {
+  padding: 2em 5em;
+  display: flex;
+}
+
+.body-left {
+  margin-left: auto;
+  padding-right: 5%;
+}
+.body-middle {
+  margin-right: auto;
+  padding-left: 5%;
+  max-width: 50%;
+}
+
+.body-middle h2 {
+  text-align: center;
+}
+
+.info {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.info ul {
+  padding-left: 5em;
+}
+
+.btn {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between; /* pushes text left and icon right */
+  align-items: center; /* vertically center content */
+  color: white; /* so text/icon is visible on black */
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  font-size: large;
+}

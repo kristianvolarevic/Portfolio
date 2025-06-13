@@ -1,0 +1,53 @@
+<div class="body">
+  <div class="body-left">
+    <img src="/images/profile.png" width="100%" alt="Photograph of me" />
+  </div>
+  <div class="body-middle">
+    <h2>About Me</h2>
+    <p>
+      Hi! I am a university student in my final semester of a Bachelor of
+      Information Technology. I am majoring in Games and Immersive Media,
+      learning the fundamentals of the industry. I currently live and study in
+      Melbourne, Australia.
+    </p>
+    <p>
+      My strengths lie in programming and problem-solving, but I am also well
+      versed in 3D modelling, with some limited experience in sound design.
+      Having grown up playing many video games, sharing this experience with
+      others is a passion of mine, and it's what drew me to the field of game
+      development.
+    </p>
+    <p>
+      In my free time, I love coming up with ideas for games I might
+      create—often ambitiously scoping them far too large. This creativity stems
+      from my love of comic books, TV shows, and movies. I've spent countless
+      hours immersing myself in various stories, which has deepened my
+      appreciation for the people who work on these projects.
+    </p>
+  </div>
+</div>
+
+<div class="info">
+  <hr />
+
+  @for (section of sections; track section.title) {
+  <div (click)="toggleSection(section)">
+    <button class="btn">
+      {{section.title}} @if (section.expanded) {
+      <i class="fa-solid fa-chevron-up"></i>
+      } @else {
+      <i class="fa-solid fa-chevron-down"></i>
+      }
+    </button>
+
+    @if(section.expanded){
+    <ul>
+      @for(item of section.items; track item){
+      <li>{{item}}</li>
+      }
+    </ul>
+    }
+    <hr />
+  </div>
+  }
+</div>
