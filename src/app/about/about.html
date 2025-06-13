@@ -18,11 +18,11 @@
       development.
     </p>
     <p>
-      In my free time, I love coming up with ideas for games I might
-      create—often ambitiously scoping them far too large. This creativity stems
-      from my love of comic books, TV shows, and movies. I've spent countless
-      hours immersing myself in various stories, which has deepened my
-      appreciation for the people who work on these projects.
+      In my free time, I love coming up with ideas for games I might create
+      often ambitiously scoping them far too large as my imagination runs wild.
+      This creativity stems from my love of comic books, TV shows, and movies.
+      I've spent countless hours immersing myself in various stories, which has
+      deepened my appreciation for the people who work within these industries.
     </p>
   </div>
 </div>
@@ -42,8 +42,18 @@
 
     @if(section.expanded){
     <ul>
-      @for(item of section.items; track item){
-      <li>{{item}}</li>
+      @for(item of section.items; track item.name){
+      <li>
+        {{item.name}} @if (item.linkText && item.linkHref){
+        <a href="{{item.linkHref}}" target="_blank">{{item.linkText}}</a>
+        } @if(item.nameCont){ {{item.nameCont}} } @if(item.subItems.length > 0){
+        <ul>
+          @for(subItem of item.subItems; track subItem){
+          <li>{{subItem.name}}</li>
+          }
+        </ul>
+        }
+      </li>
       }
     </ul>
     }

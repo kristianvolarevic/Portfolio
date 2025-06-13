@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Section } from '../models/section';
+import { Item } from '../models/item';
 
 @Component({
   selector: 'app-about',
@@ -7,25 +9,56 @@ import { Component } from '@angular/core';
   styleUrl: './about.css',
 })
 export class About {
-  sections = [
-    {
-      title: 'Work History',
-      expanded: false,
-      items: ['Crew Member at Guzman y Gomez Burnside (2023-2025)'],
-    },
-    {
-      title: 'Qualifications',
-      expanded: false,
-      items: [
-        "Bachelor's Degree of Information Technology, Monash University (2025)",
-      ],
-    },
-    {
-      title: 'Skills & Tools',
-      expanded: false,
-      items: ['Test1'],
-    },
-  ];
+  sections: Section[] = [];
+
+  ngOnInit() {
+    this.initialiseWorkHistory();
+    this.initialiseQualifications();
+  }
+
+  initialiseWorkHistory() {
+    const workHistory: Section = new Section('Work History', []);
+
+    //Create Items
+    const GYG: Item = new Item(
+      'Crew Member at ',
+      [], //empty subitem
+      'Guzman y Gomez Burnside',
+      'https://www.guzmanygomez.com.au/locations/burnside/',
+      ' (2023-2025)'
+    );
+
+    //Add items to section
+    workHistory.items.push(GYG);
+
+    //Store section
+    this.sections.push(workHistory);
+  }
+
+  initialiseQualifications() {
+    const qualifications: Section = new Section('Qualifications', []);
+
+    //Create Items
+    const bachelorOfIT: Item = new Item(
+      "Bachelor's Degree of Information Technology, ",
+      [],
+      'Monash University',
+      'https://www.monash.edu/',
+      ' (Expected 2025)'
+    );
+
+    //Create SubItems
+    const bachelorOfItMajor: Item = new Item('Major: Games & Immersive Media');
+
+    //Add SubItems
+    bachelorOfIT.subItems.push(bachelorOfItMajor);
+
+    //Add Items
+    qualifications.items.push(bachelorOfIT);
+
+    //Store Section
+    this.sections.push(qualifications);
+  }
 
   toggleSection(section: any) {
     section.expanded = !section.expanded;
