@@ -1,8 +1,18 @@
 @include color-mode(dark) {
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .text-style {
   font-family: "Lekton", monospace;
   font-weight: 400;
   font-style: normal;
+}
+
+app-footer {
+  margin-top: auto;
 }
