@@ -1,0 +1,15 @@
+.projects-grid {
+  margin: 0 auto;
+  padding: 5em;
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  flex-wrap: nowrap;
+  max-width: 80%;
+}
+
+.test-box {
+  width: 33%;
+  background-color: aliceblue;
+  height: 100px;
+}
