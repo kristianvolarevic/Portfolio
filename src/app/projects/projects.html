@@ -1,5 +1,10 @@
 <div class="projects-grid">
-  <div class="test-box"></div>
-  <div class="test-box"></div>
-  <div class="test-box"></div>
+  @for (project of projects; track project.title) {
+  <a class="project-wrapper" href="{{project.href}}">
+    <div class="image-wrapper">
+      <img class="project-image" src="{{project.logo}}" />
+    </div>
+    <h3>{{project.title}}</h3>
+  </a>
+  }
 </div>
