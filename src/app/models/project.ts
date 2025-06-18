@@ -1,11 +1,21 @@
 export class Project {
   title: string;
   logo: string;
-  href: string;
+  description: string;
+  keyResponsibilities: string[];
+  note: string;
 
-  constructor(title: string, logo: string, href: string = '/contact') {
+  constructor(
+    title: string,
+    logo: string,
+    description: string = '',
+    keyResponsibilities: string[] = [],
+    note: string = ''
+  ) {
     this.title = title;
     this.logo = logo;
-    this.href = href;
+    this.description = description;
+    this.keyResponsibilities = keyResponsibilities;
+    this.note = note;
   }
 }
