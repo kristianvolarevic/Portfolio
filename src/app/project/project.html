@@ -1,20 +1,60 @@
 <div class="project">
-  <div class="project-left"><img src="{{project?.logo}}" /></div>
-  <div class="project-right">
-    <h3>{{project?.title}}</h3>
+  <div class="project-left" #projectLeftElement>
+    <img
+      [src]="project?.logo"
+      alt="Project Logo"
+      [ngStyle]="{ width: imageHeight }"
+    />
+
+    @if (showVideo) {
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/4EK8Z5IJFYs?si=qtjAChc6Ee0N-7xN"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+    }
+  </div>
+
+  <div class="project-right" #projectRightElement>
+    <h3>{{ project?.title }}</h3>
+
     <div class="project-description" [innerHTML]="project?.description"></div>
+
     <br />
+
     <h5>Key Responsibilities</h5>
     <ul>
       @for (responsibility of project?.keyResponsibilities; track
       responsibility) {
-      <li>{{responsibility}}</li>
+      <li>{{ responsibility }}</li>
       }
     </ul>
 
-    <br />
-    @if (project?.note != "") {
-    <p><strong>Note: </strong>{{project?.note}}</p>
+    @if (project?.note != '') {
+    <p><strong>Note:</strong> {{ project?.note }}</p>
     }
   </div>
+</div>
+
+<div class="project-gallery">
+  @if (project?.videos?.length != 0) { @for (videoRef of project?.videos; track
+  videoRef) { @if (videoRef === project?.videos?.[0] && showVideo) {
+  <!-- Skip if main video is already shown above -->
+  } @else {
+  <div class="video-container">
+    <iframe
+      [src]="getSafeVideoUrl(videoRef)"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+  } } }
 </div>
