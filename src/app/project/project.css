@@ -60,7 +60,22 @@
   margin: 0 auto;
 }
 
-.project-gallery img,
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .project-gallery .video-container {
   width: 100%;
   height: auto;

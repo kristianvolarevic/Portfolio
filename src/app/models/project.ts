@@ -1,5 +1,6 @@
 export class Project {
   title: string;
+  role: string;
   logo: string;
   description: string;
   keyResponsibilities: string[];
@@ -9,6 +10,7 @@ export class Project {
 
   constructor(
     title: string,
+    role: string,
     logo: string,
     description: string = '',
     keyResponsibilities: string[] = [],
@@ -17,6 +19,7 @@ export class Project {
     images: string[] = []
   ) {
     this.title = title;
+    this.role = role;
     this.logo = logo;
     this.description = description;
     this.keyResponsibilities = keyResponsibilities;

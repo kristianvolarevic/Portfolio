@@ -9,6 +9,8 @@
 
 .header-left {
   margin-right: auto;
+  text-decoration: none;
+  color: White;
 }
 
 /* Left side header (e.g. title) styling */
@@ -42,7 +44,7 @@
 /* Active link state */
 .header-right a.active-link {
   color: white; /* Color when active */
-  cursor: auto; /* Change cursor to default when active */
+  cursor: pointer; /* Change cursor to default when active */
 }
 
 .bg-tertiary {

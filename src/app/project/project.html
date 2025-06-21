@@ -22,6 +22,9 @@
 
   <div class="project-right" #projectRightElement>
     <h3>{{ project?.title }}</h3>
+    <ul>
+      <li>{{project?.role}}</li>
+    </ul>
 
     <div class="project-description" [innerHTML]="project?.description"></div>
 
@@ -56,5 +59,8 @@
       allowfullscreen
     ></iframe>
   </div>
-  } } }
+  } } } @if (project?.images?.length != 0) { @for (image of project?.images;
+  track image) {
+  <div class="image-container"><img src="{{image}}" /></div>
+  } }
 </div>
