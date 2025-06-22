@@ -6,10 +6,10 @@
       [ngStyle]="{ width: imageHeight }"
     />
 
-    @if (showVideo) {
-    <div class="video-container">
+    @if (showVideo && project?.videos?.[0]) {
+    <div class="video-container main-left-video">
       <iframe
-        src="https://www.youtube.com/embed/4EK8Z5IJFYs?si=qtjAChc6Ee0N-7xN"
+        [src]="getSafeVideoUrl(project!.videos[0])"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -23,7 +23,7 @@
   <div class="project-right" #projectRightElement>
     <h3>{{ project?.title }}</h3>
     <ul>
-      <li>{{project?.role}}</li>
+      <li>{{ project?.role }}</li>
     </ul>
 
     <div class="project-description" [innerHTML]="project?.description"></div>
@@ -44,11 +44,11 @@
   </div>
 </div>
 
+@if(project?.images?.length != 0 || project?.videos?.length != 0){
 <div class="project-gallery">
   @if (project?.videos?.length != 0) { @for (videoRef of project?.videos; track
-  videoRef) { @if (videoRef === project?.videos?.[0] && showVideo) {
-  <!-- Skip if main video is already shown above -->
-  } @else {
+  videoRef) { @if ((videoRef === project?.videos?.[0] && !showVideo) ||
+  (videoRef !== project?.videos?.[0])) {
   <div class="video-container">
     <iframe
       [src]="getSafeVideoUrl(videoRef)"
@@ -64,6 +64,7 @@
   <div class="image-container"><img src="{{image}}" /></div>
   } }
 </div>
+}
 
 <div class="project-navigation">
   <div class="project-nav-btn-grid">
