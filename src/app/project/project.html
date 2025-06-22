@@ -64,3 +64,18 @@
   <div class="image-container"><img src="{{image}}" /></div>
   } }
 </div>
+
+<div class="project-navigation">
+  <div class="project-nav-btn-grid">
+    <button
+      class="btn btn-outline-light btn-lg fa-solid fa-chevron-left"
+      [disabled]="!canNavigatePrevious"
+      (click)="clickPrevious()"
+    ></button>
+    <button
+      class="btn btn-outline-light btn-lg fa-solid fa-chevron-right"
+      [disabled]="!canNavigateNext"
+      (click)="clickNext()"
+    ></button>
+  </div>
+</div>

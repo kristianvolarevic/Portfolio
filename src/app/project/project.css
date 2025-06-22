@@ -81,3 +81,17 @@
   height: auto;
   object-fit: cover;
 }
+
+.project-navigation {
+  padding: 0 5em 5em;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.project-nav-btn-grid {
+  display: flex;
+  gap: 2em;
+  margin-left: auto;
+  justify-content: flex-end;
+}

@@ -28,6 +28,9 @@ export class Project implements OnInit, AfterViewInit, OnDestroy {
   project: ProjectModel | null = null;
   showVideo = false;
   imageHeight = 'auto';
+  currentIndex = -1;
+  canNavigatePrevious: boolean = true;
+  canNavigateNext: boolean = true;
 
   @ViewChild('projectRightElement') projectRightElement!: ElementRef;
   @ViewChild('projectLeftElement') projectLeftElement!: ElementRef;
@@ -49,6 +52,11 @@ export class Project implements OnInit, AfterViewInit, OnDestroy {
         PROJECTS.find((p) => p.title === this.projectTitle) || null;
 
       if (this.project) {
+        this.currentIndex = PROJECTS.findIndex(
+          (p) => p.title === this.projectTitle
+        );
+        this.updateNavigationButtons();
+
         this.cleanupObserver();
         Promise.resolve().then(() => {
           this.setupMutationObserver();
@@ -139,5 +147,23 @@ export class Project implements OnInit, AfterViewInit, OnDestroy {
 
   getSafeVideoUrl(videoUrl: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
+  }
+
+  private updateNavigationButtons() {
+    this.canNavigatePrevious = this.currentIndex > 0;
+    this.canNavigateNext = this.currentIndex < PROJECTS.length - 1;
+  }
+
+  clickPrevious() {
+    if (this.canNavigatePrevious) {
+      const previousProject = PROJECTS[this.currentIndex - 1];
+      this.router.navigate(['/projects', previousProject.title]);
+    }
+  }
+  clickNext() {
+    if (this.canNavigateNext) {
+      const nextProject = PROJECTS[this.currentIndex + 1];
+      this.router.navigate(['/projects', nextProject.title]);
+    }
   }
 }
