@@ -1,11 +1,15 @@
+<!-- Project Container -->
 <div class="project">
+  <!-- Left Side: Logo and Main Video -->
   <div class="project-left" #projectLeftElement>
+    <!-- Project Logo -->
     <img
       [src]="project?.logo"
       alt="Project Logo"
       [ngStyle]="{ width: imageHeight }"
     />
 
+    <!-- Main Project Video (only shown if showVideo is true and a video exists) -->
     @if (showVideo && project?.videos?.[0]) {
     <div class="video-container main-left-video">
       <iframe
@@ -20,16 +24,22 @@
     }
   </div>
 
+  <!-- Right Side: Project Info -->
   <div class="project-right" #projectRightElement>
+    <!-- Project Title -->
     <h3>{{ project?.title }}</h3>
+
+    <!-- Project Role -->
     <ul>
       <li>{{ project?.role }}</li>
     </ul>
 
+    <!-- Project Description (supports HTML content) -->
     <div class="project-description" [innerHTML]="project?.description"></div>
 
     <br />
 
+    <!-- Key Responsibilities -->
     <h5>Key Responsibilities</h5>
     <ul>
       @for (responsibility of project?.keyResponsibilities; track
@@ -38,14 +48,17 @@
       }
     </ul>
 
+    <!-- Optional Note Section -->
     @if (project?.note != '') {
     <p><strong>Note:</strong> {{ project?.note }}</p>
     }
   </div>
 </div>
 
-@if(project?.images?.length != 0 || project?.videos?.length != 0){
+<!-- Project Gallery (only shown if there are videos or images) -->
+@if (project?.images?.length != 0 || project?.videos?.length != 0) {
 <div class="project-gallery">
+  <!-- Additional Videos (excluding the first if it's already shown) -->
   @if (project?.videos?.length != 0) { @for (videoRef of project?.videos; track
   videoRef) { @if ((videoRef === project?.videos?.[0] && !showVideo) ||
   (videoRef !== project?.videos?.[0])) {
@@ -59,20 +72,29 @@
       allowfullscreen
     ></iframe>
   </div>
-  } } } @if (project?.images?.length != 0) { @for (image of project?.images;
-  track image) {
-  <div class="image-container"><img src="{{image}}" /></div>
+  } } }
+
+  <!-- Project Images -->
+  @if (project?.images?.length != 0) { @for (image of project?.images; track
+  image) {
+  <div class="image-container">
+    <img src="{{ image }}" />
+  </div>
   } }
 </div>
 }
 
+<!-- Navigation Buttons -->
 <div class="project-navigation">
   <div class="project-nav-btn-grid">
+    <!-- Previous Button -->
     <button
       class="btn btn-outline-light btn-lg fa-solid fa-chevron-left"
       [disabled]="!canNavigatePrevious"
       (click)="clickPrevious()"
     ></button>
+
+    <!-- Next Button -->
     <button
       class="btn btn-outline-light btn-lg fa-solid fa-chevron-right"
       [disabled]="!canNavigateNext"

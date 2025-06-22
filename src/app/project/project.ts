@@ -30,11 +30,13 @@ export class Project
 {
   projectTitle: string | null = null;
   project: ProjectModel | null = null;
-  showVideo = false; // TRUE = video in left sidebar, FALSE = video in gallery
-  imageHeight = 'auto'; // Logo image always 'auto' for aspect ratio
+
+  showVideo = false;
+  imageHeight = 'auto';
   currentIndex = -1;
-  canNavigatePrevious: boolean = true;
-  canNavigateNext: boolean = true;
+
+  canNavigatePrevious = true;
+  canNavigateNext = true;
 
   private needsLayoutUpdate = false;
   private viewInitialized = false;
@@ -45,7 +47,6 @@ export class Project
   private observer: MutationObserver | null = null;
   private routerSubscription: any;
   private currentLayoutAnimationFrameId: number | null = null;
-
   private stableLayoutCheckCount = 0;
   private lastRightHeight = 0;
   private maxStableChecks = 5;
@@ -61,7 +62,6 @@ export class Project
     this.routerSubscription = this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
-        console.log('NavigationEnd event detected. Loading project data...');
         this.loadProjectData();
       });
 
@@ -70,8 +70,6 @@ export class Project
 
   ngAfterViewInit() {
     this.viewInitialized = true;
-    console.log('ngAfterViewInit: View elements are ready.');
-
     if (this.project) {
       this.scheduleLayoutCheck();
     }
@@ -79,7 +77,6 @@ export class Project
 
   ngAfterViewChecked() {
     if (this.needsLayoutUpdate) {
-      console.log('ngAfterViewChecked: needsLayoutUpdate triggered.');
       this.determineContentLayout();
       this.needsLayoutUpdate = false;
       this.cdr.detectChanges();
@@ -88,9 +85,11 @@ export class Project
 
   ngOnDestroy() {
     this.cleanupObserver();
+
     if (this.routerSubscription) {
       this.routerSubscription.unsubscribe();
     }
+
     if (this.currentLayoutAnimationFrameId !== null) {
       cancelAnimationFrame(this.currentLayoutAnimationFrameId);
       this.currentLayoutAnimationFrameId = null;
@@ -111,26 +110,12 @@ export class Project
             (p) => p.title === this.projectTitle
           );
           this.updateNavigationButtons();
-
           this.cleanupObserver();
 
           if (this.viewInitialized) {
-            console.log(
-              'loadProjectData: View initialized, scheduling layout check...'
-            );
             this.scheduleLayoutCheck();
-          } else {
-            console.log(
-              'loadProjectData: View not yet initialized, ngAfterViewInit will schedule.'
-            );
           }
-        } else {
-          console.warn(`Project with title "${this.projectTitle}" not found.`);
         }
-      } else {
-        console.log(
-          `Project "${this.projectTitle}" already loaded, no change in ID.`
-        );
       }
     });
   }
@@ -149,18 +134,12 @@ export class Project
       !this.projectRightElement ||
       !this.projectLeftElement
     ) {
-      console.warn(
-        'scheduleLayoutCheck: Elements not ready, rescheduling initial check...'
-      );
       this.currentLayoutAnimationFrameId = requestAnimationFrame(() =>
         this.scheduleLayoutCheck()
       );
       return;
     }
 
-    console.log(
-      'scheduleLayoutCheck: Elements confirmed ready. Starting stable height check...'
-    );
     this.currentLayoutAnimationFrameId = requestAnimationFrame(() =>
       this.checkStableLayout()
     );
@@ -168,9 +147,6 @@ export class Project
 
   private checkStableLayout() {
     if (!this.projectRightElement || !this.projectLeftElement) {
-      console.warn(
-        'checkStableLayout: Elements disappeared or not initialized. Stopping check.'
-      );
       this.currentLayoutAnimationFrameId = null;
       return;
     }
@@ -180,14 +156,8 @@ export class Project
 
     if (currentRightHeight === this.lastRightHeight && currentRightHeight > 0) {
       this.stableLayoutCheckCount++;
-      console.log(
-        `Height stable count: ${this.stableLayoutCheckCount} / ${this.maxStableChecks}. Current Height: ${currentRightHeight}`
-      );
     } else {
       this.stableLayoutCheckCount = 0;
-      console.log(
-        `Height changed or zero. Resetting stable count. New Height: ${currentRightHeight}`
-      );
     }
 
     this.lastRightHeight = currentRightHeight;
@@ -196,34 +166,23 @@ export class Project
       this.stableLayoutCheckCount >= this.maxStableChecks ||
       (currentRightHeight === 0 && this.stableLayoutCheckCount > 0)
     ) {
-      console.log(
-        'Layout appears stable or consistently zero. Proceeding with determineContentLayout.'
-      );
       this.currentLayoutAnimationFrameId = null;
 
-      // Image check is still relevant here for the logo in the left panel.
       const logoImg =
         this.projectLeftElement.nativeElement.querySelector('img');
+
       if (logoImg && !logoImg.complete) {
-        console.log('Logo image not yet complete. Waiting for load...');
         logoImg.onload = () => {
-          console.log('Logo image loaded. Final layout determination.');
           this.determineContentLayout();
           this.cdr.detectChanges();
           this.setupMutationObserver();
         };
         logoImg.onerror = () => {
-          console.error(
-            'Logo image failed to load. Proceeding with layout determination as fallback.'
-          );
           this.determineContentLayout();
           this.cdr.detectChanges();
           this.setupMutationObserver();
         };
       } else {
-        console.log(
-          'No logo image or already complete. Final layout determination.'
-        );
         this.determineContentLayout();
         this.cdr.detectChanges();
         this.setupMutationObserver();
@@ -236,18 +195,11 @@ export class Project
   }
 
   private setupMutationObserver() {
-    if (!this.projectRightElement || !this.projectLeftElement) {
-      console.warn('MutationObserver setup failed: elements not available.');
-      return;
-    }
+    if (!this.projectRightElement) return;
 
     this.cleanupObserver();
 
     this.observer = new MutationObserver(() => {
-      console.log(
-        'MutationObserver: DOM change detected in right element. Scheduling layout check.'
-      );
-      // When mutation occurs, re-trigger the full layout check
       requestAnimationFrame(() => this.scheduleLayoutCheck());
     });
 
@@ -257,18 +209,15 @@ export class Project
       attributes: true,
       characterData: true,
     });
-    console.log('MutationObserver setup and observing projectRightElement.');
   }
 
   private cleanupObserver() {
     if (this.observer) {
       this.observer.disconnect();
       this.observer = null;
-      console.log('MutationObserver disconnected.');
     }
   }
 
-  // --- Crucial Logic Change Here ---
   determineContentLayout() {
     if (
       !this.projectRightElement ||
@@ -277,35 +226,20 @@ export class Project
         this.lastRightHeight === 0) ||
       this.projectLeftElement.nativeElement.offsetHeight === 0
     ) {
-      console.warn(
-        'determineContentLayout: Elements or their heights are not ready. Skipping.'
-      );
       return;
     }
 
     const rightHeight = this.projectRightElement.nativeElement.offsetHeight;
-    console.log(`Current Right Element Height for decision: ${rightHeight}px`);
-
-    // Define the threshold for when the right sidebar is "big enough"
-    // If rightHeight is below this, the video moves to the gallery.
-    // YOU WILL NEED TO TUNE THIS VALUE BASED ON YOUR DESIGN AND VIDEO HEIGHT.
-    const thresholdForVideoInLeft = 700; // Example: if right is less than 700px, move video
+    const thresholdForVideoInLeft = 700;
 
     const shouldVideoStayInLeft = rightHeight >= thresholdForVideoInLeft;
 
     if (this.showVideo !== shouldVideoStayInLeft) {
       this.showVideo = shouldVideoStayInLeft;
-      console.log(
-        `Layout decision: showVideo changed to ${this.showVideo} (rightHeight: ${rightHeight}px, threshold: ${thresholdForVideoInLeft}px).`
-      );
     }
 
-    // The image height is set to 'auto' as per your CSS.
-    // It remains in project-left regardless of showVideo.
-    this.imageHeight = 'auto'; // Keep auto for aspect ratio
-    console.log(`Image height set to: ${this.imageHeight}.`);
+    this.imageHeight = 'auto';
   }
-  // --- End of Crucial Logic Change ---
 
   getSafeVideoUrl(videoUrl: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
