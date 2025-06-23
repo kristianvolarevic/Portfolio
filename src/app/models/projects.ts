@@ -7,7 +7,7 @@ export const PROJECTS = [
   new Project(
     'ChronoRevert (WIP)',
     'Project Manager & Developer',
-    '/img/chronoRevert-logo.jpg',
+    'img/chronoRevert-logo.jpg',
     "<strong>ChronoRevert</strong> is a first-person, 3D puzzle-platformer developed in Unreal Engine, set in a post-apocalyptic future shaped by humanity's fears of the future, technology, and the environment. The game explores the relationship between humans, climate, and machines, inviting players to uncover how our actions shape our world.",
     [
       'Managing group progress and keeping members up to pace.',
@@ -20,11 +20,7 @@ export const PROJECTS = [
     ],
     'This project is currently in development with an estimated completion date of November 2025.',
     ['https://www.youtube.com/embed/ipNvYduX-l0?si=2YZZ86MwvAdZRzyf'],
-    [
-      '/img/chronoRevert1.jpg',
-      '/img/chronoRevert2.jpg',
-      '/img/chronoRevert3.jpg',
-    ]
+    ['img/chronoRevert1.jpg', 'img/chronoRevert2.jpg', 'img/chronoRevert3.jpg']
   ),
 
   // ------------------------
@@ -33,7 +29,7 @@ export const PROJECTS = [
   new Project(
     'Bite Nite',
     'Project Manager & Developer',
-    '/img/bitenite-logo.jpg',
+    'img/bitenite-logo.jpg',
     '<strong>Bite Nite</strong> is a prototype game developed during my university course where I learnt a lot about working within Unreal Engine and using C++ to create gameplay mechanics. A link to this project can be found <a href="https://kvol0002.itch.io/bitenite" target="_blank">here</a>.',
     [
       'Managing group progress and keeping members up to pace.',
@@ -44,7 +40,7 @@ export const PROJECTS = [
     ],
     '',
     ['https://www.youtube.com/embed/4EK8Z5IJFYs?si=qtjAChc6Ee0N-7xN'],
-    ['/img/bitenite1.jpg']
+    ['img/bitenite1.jpg']
   ),
 
   // ------------------------
@@ -53,7 +49,7 @@ export const PROJECTS = [
   new Project(
     '3D Character Assignment',
     '3D Character Artist',
-    '/img/3dCharacterAssignment-logo.jpg',
+    'img/3dCharacterAssignment-logo.jpg',
     'This 3D character was created as part of a university assignment where I was tasked with designing and creating a humanoid character with accompanying accessories. The theme I chose was a medieval knight crossed with a devil. To convey this, I added armour and a sword, along with horns and wings. Additionally, this character was rigged and posed to reflect a chosen character trait — in this case, a frightening and confident stance.',
     [
       'Collating reference images and creating initial sketches.',
@@ -70,7 +66,7 @@ export const PROJECTS = [
   new Project(
     '3D Creature Assignment',
     '3D Artist',
-    '/img/3dCreatureAssignment-logo.jpg',
+    'img/3dCreatureAssignment-logo.jpg',
     'This 3D creature was created as part of a university assignment where I was tasked with designing and building a fictional creature. The concept was a velociraptor mixed with elements from other animals found in reference images. I also textured the creature and placed it on a stage within Unity.',
     [
       'Collating reference images and creating initial sketches.',
