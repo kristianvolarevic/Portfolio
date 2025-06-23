@@ -1,13 +1,17 @@
 <div class="header">
-  <div class="header-left vstack gap-1">
+  <a class="header-left vstack gap-1" href="/about">
     <h1>Kristian Volarevic</h1>
     <h2>&nbsp; Bachelor of Information Technology</h2>
-  </div>
+  </a>
   <div class="header-right hstack gap-5">
     <a class="nav-link" routerLink="/about" routerLinkActive="active-link"
       >About</a
     >
-    <a class="nav-link" routerLink="/projects" routerLinkActive="active-link"
+    <a
+      class="nav-link"
+      routerLink="/projects"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{exact: false}"
       >Projects</a
     >
     <a class="nav-link" routerLink="/contact" routerLinkActive="active-link"

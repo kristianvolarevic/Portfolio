@@ -1,0 +1,116 @@
+/* === Layout === */
+
+/* Main project container with horizontal layout */
+.project {
+  display: flex;
+  gap: 5em; /* Space between left and right sections */
+  padding: 5em; /* Outer padding */
+  max-width: 1300px; /* Maximum container width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+/* Left section of the project (logo + video) */
+.project-left {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 2em; /* Space between items */
+}
+
+/* Right section containing text content */
+.project-right {
+  max-width: 50%; /* Limit width to half of container */
+  height: fit-content; /* Only take as much height as needed */
+}
+
+/* === Images === */
+
+/* Style for the logo image */
+.project-left img {
+  display: block;
+  max-width: 100%; /* Responsive width */
+  min-width: 300px; /* Ensure a minimum width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Style links in the project description */
+.project-description a {
+  color: white;
+  font-weight: bold;
+}
+
+/* === Video Container === */
+
+/* Responsive container for 16:9 video iframe */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  height: 0; /* Set to 0 to allow padding-top to dictate height */
+  overflow: hidden;
+}
+
+/* Make the iframe fill the container */
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* === Gallery === */
+
+/* Grid layout for images and videos in the gallery */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2-column grid */
+  gap: 2em;
+  padding: 0 5em 5em; /* Padding: no top, equal sides and bottom */
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Container for each image with 16:9 ratio */
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+/* Make the image fill the container and maintain aspect ratio */
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Keep image fully visible inside container */
+}
+
+/* Gallery video container adjustments */
+.project-gallery .video-container {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* === Navigation Buttons === */
+
+/* Container for navigation section */
+.project-navigation {
+  padding: 0 5em 5em; /* No top padding, side and bottom consistent */
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Grid layout for nav buttons aligned to the right */
+.project-nav-btn-grid {
+  display: flex;
+  gap: 2em; /* Space between buttons */
+  margin-left: auto; /* Push to the right */
+  justify-content: flex-end;
+}

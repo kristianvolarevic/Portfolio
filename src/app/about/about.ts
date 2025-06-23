@@ -82,12 +82,12 @@ export class About {
     const soundDesign: Item = new Item('Sound Design');
     const versionControl: Item = new Item('Version Control');
     const mathsAndPhysics: Item = new Item(
-      'Maths & Physics (High School Level)'
+      'Mathematics & Physics (High School Level)'
     );
     const mobileApps: Item = new Item(
       'Mobile Application Development (Android)'
     );
-    const web: Item = new Item('Web Development (HTML, JavaScript & CSS');
+    const web: Item = new Item('Web Development (HTML, JavaScript & CSS)');
     const databaseManagement: Item = new Item(
       'Database Management (Relational & NoSQL)'
     );
@@ -106,7 +106,7 @@ export class About {
     const Maya: Item = new Item('Autodesk Maya');
     const VSCode: Item = new Item('Visual Studio Code');
     const Rider: Item = new Item('JetBrains Rider');
-    const Git: Item = new Item('Git (GitHub & GitLab');
+    const Git: Item = new Item('Git (GitHub & GitLab)');
     const SubstancePainter: Item = new Item('Substance 3D Painter');
     const Microsoft: Item = new Item('Microsoft Suite');
     const Google: Item = new Item('Google Suite');

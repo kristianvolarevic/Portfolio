@@ -1,1 +1,10 @@
-<p>Project Page Coming Soon</p>
+<div class="projects-grid">
+  @for (project of projects; track project.title) {
+  <a class="project-wrapper" [routerLink]="['/projects', project.title]">
+    <div class="image-wrapper">
+      <img class="project-image" src="{{project.logo}}" />
+    </div>
+    <h3>{{project.title}}</h3>
+  </a>
+  }
+</div>
