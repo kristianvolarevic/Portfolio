@@ -1,0 +1,86 @@
+<div class="body">
+  <div class="body-left">
+    <h1>Contact Me</h1>
+    <p>
+      Feel free to reach out if you're looking for a passionate and motivated
+      graduate to join your game development team! I'm eager to contribute to
+      the industry, learn from experienced professionals, and explore
+      opportunities—whether it's full-time work, internships, or freelance
+      collaborations.
+    </p>
+    <ul>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/kristian-volarevic/"
+          target="_blank"
+          >LinkedIn</a
+        >
+      </li>
+      <li>
+        <a href="https://www.instagram.com/kristianvola/" target="_blank"
+          >Instagram</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="body-right">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <!-- Full Name -->
+      <div class="mb-3">
+        <label for="fullName" class="form-label"
+          >Full Name <span class="text-danger">*</span></label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="fullName"
+          required
+          formControlName="name"
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label"
+          >Email <span class="text-danger">*</span></label
+        >
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          required
+          formControlName="email"
+        />
+      </div>
+
+      <!-- Subject -->
+      <div class="mb-3">
+        <label for="subject" class="form-label"
+          >Subject <span class="text-danger">*</span></label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="subject"
+          required
+          formControlName="subject"
+        />
+      </div>
+
+      <!-- Message -->
+      <div class="mb-3">
+        <label for="subject" class="form-label"
+          >Message <span class="text-danger">*</span></label
+        >
+        <textarea
+          class="form-control"
+          id="subject"
+          required
+          formControlName="message"
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-light btn-lg">Send</button>
+    </form>
+  </div>
+</div>
