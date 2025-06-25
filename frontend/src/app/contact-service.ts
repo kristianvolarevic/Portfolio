@@ -8,6 +8,9 @@ export class ContactService {
   constructor(private http: HttpClient) {}
 
   sendFormData(formData: any) {
-    return this.http.post('http://localhost:3000/send-email', formData);
+    return this.http.post(
+      'https://portfolio-itzv.onrender.com/send-email',
+      formData
+    );
   }
 }
