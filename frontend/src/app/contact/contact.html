@@ -80,7 +80,64 @@
         ></textarea>
       </div>
 
-      <button type="submit" class="btn btn-light btn-lg">Send</button>
+      <div class="btn-loader">
+        <button type="submit" class="btn btn-light btn-lg">Send</button>
+        @if (isLoading) {
+        <div class="loading-spinner">
+          <div class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        }
+      </div>
     </form>
+
+    <!-- Success Modal -->
+    <div class="modal fade" #successModal>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Message Sent
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-success">
+              <i class="fa-regular fa-circle-check"></i> Message successfully
+              sent.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div class="modal fade" #errorModal>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Error!</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-danger">
+              <i class="fa-solid fa-circle-exclamation"></i> An error occured,
+              please try again.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
