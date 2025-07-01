@@ -50,3 +50,9 @@ textarea {
   align-items: center;
   gap: 1em;
 }
+
+.body-left img {
+  max-width: 80%;
+  height: auto;
+  padding: 1em;
+}
