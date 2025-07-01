@@ -1,0 +1,15 @@
+.section {
+  height: 600px; /* or whatever fits your layout */
+  position: relative;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* needed for centering */
+}
+
+.content {
+  text-align: center;
+}
