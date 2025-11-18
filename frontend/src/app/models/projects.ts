@@ -5,7 +5,7 @@ export const PROJECTS = [
   // Chronorevert
   // ------------------------
   new Project(
-    'ChronoRevert (WIP)',
+    'ChronoRevert',
     'Project Manager & Developer',
     'img/chronoRevert-logo.jpg',
     "<strong>ChronoRevert</strong> is a first-person, 3D puzzle-platformer developed in Unreal Engine, set in a post-apocalyptic future shaped by humanity's fears of the future, technology, and the environment. The game explores the relationship between humans, climate, and machines, inviting players to uncover how our actions shape our world.",
@@ -18,9 +18,17 @@ export const PROJECTS = [
       'Modelling and texturing various 3D assets.',
       'Recording Foley: footsteps, light switch, and keyboard typing.',
     ],
-    'This project is currently in development with an estimated completion date of November 2025.',
-    ['https://www.youtube.com/embed/ipNvYduX-l0?si=2YZZ86MwvAdZRzyf'],
-    ['img/chronoRevert1.jpg', 'img/chronoRevert2.jpg', 'img/chronoRevert3.jpg']
+    '',
+    ['https://www.youtube.com/embed/mj6WtYHFjCU?si=vgpui1kdNY8yHvlk'],
+    [
+      'img/chronoRevert1.jpg',
+      'img/chronoRevert2.jpg',
+      'img/chronoRevert3.jpg',
+      'img/chronoRevert4.jpg',
+      'img/chronoRevert5.jpg',
+      'img/chronoRevert6.jpg',
+    ],
+    'https://luisa20891.itch.io/chronorevert'
   ),
 
   // ------------------------
@@ -30,7 +38,7 @@ export const PROJECTS = [
     'Bite Nite',
     'Project Manager & Developer',
     'img/bitenite-logo.jpg',
-    '<strong>Bite Nite</strong> is a prototype game developed during my university course where I learnt a lot about working within Unreal Engine and using C++ to create gameplay mechanics. A link to this project can be found <a href="https://kvol0002.itch.io/bitenite" target="_blank">here</a>.',
+    '<strong>Bite Nite</strong> is a prototype game developed during my university course where I learnt a lot about working within Unreal Engine and using C++ to create gameplay mechanics.',
     [
       'Managing group progress and keeping members up to pace.',
       'Coding core gameplay mechanics in C++ and integrating them within UE5.',
@@ -40,7 +48,8 @@ export const PROJECTS = [
     ],
     '',
     ['https://www.youtube.com/embed/4EK8Z5IJFYs?si=qtjAChc6Ee0N-7xN'],
-    ['img/bitenite1.jpg']
+    ['img/bitenite1.jpg'],
+    'https://kvol0002.itch.io/bitenite'
   ),
 
   // ------------------------
@@ -57,7 +66,12 @@ export const PROJECTS = [
       'Modelling character accessories.',
       'Rigging the character with joints and controls.',
       'Posing the character and exporting into Unity.',
-    ]
+    ],
+    '',
+    [],
+    [],
+    '',
+    'builds/3D Character/index.html'
   ),
 
   // ------------------------
@@ -72,7 +86,12 @@ export const PROJECTS = [
       'Collating reference images and creating initial sketches.',
       'Creating the character base and adding detail.',
       'Creating a UV map and texturing the character.',
-    ]
+    ],
+    '',
+    [],
+    [],
+    '',
+    'builds/3DCreature/index.html'
   ),
 
   // ------------------------
@@ -82,7 +101,7 @@ export const PROJECTS = [
     'Augmented Reality Assignment',
     '3D Modeller & AR Implementer',
     'img/arAssignment-logo.jpg',
-    'During my university course, I undertook a unit covering Augmented and Virtual Reality. In this unit, I was responsible for creating virtual environments as immersive experiences for users. One such example can be seen in the assignment showcased in <a href="https://youtube.com/shorts/xaA6MZCtu_g" target="_blank">this</a> video. This project was built for Android devices and designed to run on a camera-enabled device. A download of the build can be accessed <a href="https://drive.google.com/file/d/1dnoHra4Ohclh5WiqP1uGJP1uWb5pCNNe/view?usp=sharing" target="_blank">here</a> and run on your own Android device.',
+    'During my university course, I undertook a unit covering Augmented and Virtual Reality. In this unit, I was responsible for creating virtual environments as immersive experiences for users. One such example can be seen in the assignment showcased in <a href="https://youtube.com/shorts/xaA6MZCtu_g" target="_blank">this</a> video. This project was built for Android devices and designed to run on a camera-enabled device.',
     [
       'Designing an immersive and visually appealing environment.',
       'Modelling and texturing 3D assets.',
@@ -91,6 +110,7 @@ export const PROJECTS = [
     ],
     '',
     ['https://youtube.com/embed/xaA6MZCtu_g'],
-    ['img/arAssignment1.jpg', 'img/arAssignment2.jpg']
+    ['img/arAssignment1.jpg', 'img/arAssignment2.jpg'],
+    'https://drive.google.com/file/d/1dnoHra4Ohclh5WiqP1uGJP1uWb5pCNNe/view?usp=sharing'
   ),
 ];

@@ -245,6 +245,10 @@ export class Project
     return this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
   }
 
+  getSafeBuildUrl(buildUrl: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(buildUrl);
+  }
+
   private updateNavigationButtons() {
     this.canNavigatePrevious = this.currentIndex > 0;
     this.canNavigateNext = this.currentIndex < PROJECTS.length - 1;

@@ -39,6 +39,15 @@
 
     <br />
 
+    <!-- Optional Links -->
+    @if (project?.link != '') {
+    <h4>Download</h4>
+    <a href="{{project?.link}}" target="_blank">{{project?.link}}</a>
+
+    <br />
+    <br />
+    }
+
     <!-- Key Responsibilities -->
     <h5>Key Responsibilities</h5>
     <ul>
@@ -56,7 +65,8 @@
 </div>
 
 <!-- Project Gallery (only shown if there are videos or images) -->
-@if (project?.images?.length != 0 || project?.videos?.length != 0) {
+@if (project?.images?.length != 0 || project?.videos?.length != 0 ||
+project?.build != '') {
 <div class="project-gallery">
   <!-- Additional Videos (excluding the first if it's already shown) -->
   @if (project?.videos?.length != 0) { @for (videoRef of project?.videos; track
@@ -73,6 +83,22 @@
     ></iframe>
   </div>
   } } }
+
+  <!-- Unity Build Embed -->
+  @if(project?.build != '') {
+  <div class="unity-wrapper">
+    <div class="unity-aspect-ratio">
+      <iframe
+        class="unity-content"
+        [src]="getSafeBuildUrl(project!.build)"
+        frameborder="0"
+        allowfullscreen="true"
+        title="Test Unity"
+        style="border: none"
+      ></iframe>
+    </div>
+  </div>
+  }
 
   <!-- Project Images -->
   @if (project?.images?.length != 0) { @for (image of project?.images; track
