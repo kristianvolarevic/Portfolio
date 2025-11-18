@@ -71,7 +71,7 @@ export const PROJECTS = [
     [],
     [],
     '',
-    'builds/3D Character/index.html'
+    'builds/3DCharacter/index.html'
   ),
 
   // ------------------------
