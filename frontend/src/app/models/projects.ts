@@ -5,6 +5,29 @@ export const PROJECTS = [
   // Chronorevert
   // ------------------------
   new Project(
+    'SyncList',
+    'Developer',
+    'img/syncList-logo.png',
+    'Never forget an item again. SyncList is the simplest way to manage your household shopping. Whether you’re planning a weekly grocery run or keeping track of home DIY projects, SyncList keeps everyone in the house on the same page with real-time, cloud-synced coordination.',
+    [
+      'Creating initial idea for app and features.',
+      'Implementing features onto mobile devices using the flutter framework.',
+      'Creating UI assets using photo editing software.',
+      'Publishing app to Google Play Store, and conducting testing. ',
+    ],
+    'SyncList is a mobile application built using Flutter, developed soley by me and published to the google playstore.',
+    [],
+    [
+      'img/syncList-promo1.png',
+      'img/syncList-promo2.png',
+      'img/syncList-promo3.png',
+      'img/syncList-promo4.png',
+    ],
+    'https://play.google.com/store/apps/details?id=com.kristianvolarevic.synclist&hl=en',
+    '',
+    'https://github.com/kristianvolarevic/synclist',
+  ),
+  new Project(
     'ChronoRevert',
     'Project Manager & Developer',
     'img/chronoRevert-logo.jpg',
@@ -28,7 +51,9 @@ export const PROJECTS = [
       'img/chronoRevert5.jpg',
       'img/chronoRevert6.jpg',
     ],
-    'https://luisa20891.itch.io/chronorevert'
+    'https://luisa20891.itch.io/chronorevert',
+    '',
+    'https://github.com/kristianvolarevic/ChronoRevert',
   ),
 
   // ------------------------
@@ -49,7 +74,7 @@ export const PROJECTS = [
     '',
     ['https://www.youtube.com/embed/4EK8Z5IJFYs?si=qtjAChc6Ee0N-7xN'],
     ['img/bitenite1.jpg'],
-    'https://kvol0002.itch.io/bitenite'
+    'https://kvol0002.itch.io/bitenite',
   ),
 
   // ------------------------
@@ -71,7 +96,7 @@ export const PROJECTS = [
     [],
     [],
     '',
-    'builds/3DCharacter/index.html'
+    'builds/3DCharacter/index.html',
   ),
 
   // ------------------------
@@ -91,7 +116,7 @@ export const PROJECTS = [
     [],
     [],
     '',
-    'builds/3DCreature/index.html'
+    'builds/3DCreature/index.html',
   ),
 
   // ------------------------
@@ -111,6 +136,6 @@ export const PROJECTS = [
     '',
     ['https://youtube.com/embed/xaA6MZCtu_g'],
     ['img/arAssignment1.jpg', 'img/arAssignment2.jpg'],
-    'https://drive.google.com/file/d/1dnoHra4Ohclh5WiqP1uGJP1uWb5pCNNe/view?usp=sharing'
+    'https://drive.google.com/file/d/1dnoHra4Ohclh5WiqP1uGJP1uWb5pCNNe/view?usp=sharing',
   ),
 ];

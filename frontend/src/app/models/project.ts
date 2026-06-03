@@ -9,6 +9,7 @@ export class Project {
   images: string[];
   link: string;
   build: string;
+  sourceCode: string;
 
   constructor(
     title: string,
@@ -20,7 +21,8 @@ export class Project {
     videos: string[] = [],
     images: string[] = [],
     link: string = '',
-    build: string = ''
+    build: string = '',
+    sourceCode: string = '',
   ) {
     this.title = title;
     this.role = role;
@@ -32,5 +34,6 @@ export class Project {
     this.images = images;
     this.link = link;
     this.build = build;
+    this.sourceCode = sourceCode;
   }
 }

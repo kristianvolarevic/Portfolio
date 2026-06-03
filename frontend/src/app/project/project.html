@@ -47,7 +47,6 @@
     <br />
     <br />
     }
-
     <!-- Key Responsibilities -->
     <h5>Key Responsibilities</h5>
     <ul>
@@ -60,6 +59,14 @@
     <!-- Optional Note Section -->
     @if (project?.note != '') {
     <p><strong>Note:</strong> {{ project?.note }}</p>
+    }
+
+     @if (project?.sourceCode != ''){
+      <h5>Source Code</h5>
+      <a href="{{project?.sourceCode}}" target="_blank">{{project?.sourceCode}}</a>
+
+    <br />
+    <br />
     }
   </div>
 </div>
