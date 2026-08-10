@@ -5,6 +5,22 @@ export const PROJECTS = [
   // Chronorevert
   // ------------------------
   new Project(
+    'Hallowed Ground',
+    'Sole Developer',
+    'img/hallowedGround-logo.png',
+    'Traverse the ruins of an ancient city, escaping "The Eternal Darkness", but beware as the way is ruined and must be traversed with care. Play as a priest in the distant past, working your way across the landscape as you encounter obstacles that must be dodged and structures that must be mended. See how long you can last while running from the deadly "Eternal Darkness"',
+    [
+      'Created and developed initial idea into a fully fledged game',
+      'Engineered a 2D endless scroller in Unity/C#.',
+      'Implemented character and level generation logic.',
+    ],
+    'This game is currently being worked on and has not yet been published!',
+    ['https://www.youtube.com/embed/sY3IL2zBDzQ?si=CV1Tr48OT3sJljhX'],
+    [],
+    '',
+    '',
+  ),
+  new Project(
     'SyncList',
     'Developer',
     'img/syncList-logo.png',
