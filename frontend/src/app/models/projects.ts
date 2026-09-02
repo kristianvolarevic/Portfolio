@@ -15,7 +15,10 @@ export const PROJECTS = [
       'Implemented character and level generation logic.',
     ],
     'This game is currently being worked on and has not yet been published!',
-    ['https://www.youtube.com/embed/sY3IL2zBDzQ?si=CV1Tr48OT3sJljhX'],
+    [
+      'https://www.youtube.com/embed/sY3IL2zBDzQ?si=CV1Tr48OT3sJljhX',
+      'https://www.youtube.com/embed/rDpdqteoAYw?si=edRXetThEguNA5fz',
+    ],
     [],
     '',
     '',
