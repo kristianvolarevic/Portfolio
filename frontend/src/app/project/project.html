@@ -40,10 +40,16 @@
     <br />
 
     <!-- Optional Links -->
-    @if (project?.link != '') {
+    @if (project?.links?.length != 0) {
     <h4>Download</h4>
-    <a href="{{project?.link}}" target="_blank">{{project?.link}}</a>
-
+    <ul>
+      @for (link of project?.links; track link) {
+      <li>
+        <a href="{{ link }}" target="_blank">{{ link }}</a>
+      </li>
+      }
+    </ul>
+   
     <br />
     <br />
     }

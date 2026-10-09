@@ -7,7 +7,7 @@ export class Project {
   note: string;
   videos: string[];
   images: string[];
-  link: string;
+  links: string[];
   build: string;
   sourceCode: string;
 
@@ -20,7 +20,7 @@ export class Project {
     note: string = '',
     videos: string[] = [],
     images: string[] = [],
-    link: string = '',
+    links: string[] = [],
     build: string = '',
     sourceCode: string = '',
   ) {
@@ -32,7 +32,7 @@ export class Project {
     this.note = note;
     this.videos = videos;
     this.images = images;
-    this.link = link;
+    this.links = links;
     this.build = build;
     this.sourceCode = sourceCode;
   }

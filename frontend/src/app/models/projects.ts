@@ -18,9 +18,10 @@ export const PROJECTS = [
     [
       'https://www.youtube.com/embed/sY3IL2zBDzQ?si=CV1Tr48OT3sJljhX',
       'https://www.youtube.com/embed/rDpdqteoAYw?si=edRXetThEguNA5fz',
+      'https://www.youtube.com/embed/QBoOKfMEipU?si=XGeaFTOfymgAHGmu',
     ],
     [],
-    '',
+    [],
     '',
   ),
   new Project(
@@ -42,7 +43,10 @@ export const PROJECTS = [
       'img/syncList-promo3.png',
       'img/syncList-promo4.png',
     ],
-    'https://play.google.com/store/apps/details?id=com.kristianvolarevic.synclist&hl=en',
+    [
+      'https://play.google.com/store/apps/details?id=com.kristianvolarevic.synclist&hl=en',
+      'https://apps.apple.com/au/app/synclist-household-groceries/id6800198234',
+    ],
     '',
     'https://github.com/kristianvolarevic/synclist',
   ),
@@ -70,7 +74,7 @@ export const PROJECTS = [
       'img/chronoRevert5.jpg',
       'img/chronoRevert6.jpg',
     ],
-    'https://luisa20891.itch.io/chronorevert',
+    ['https://luisa20891.itch.io/chronorevert'],
     '',
     'https://github.com/kristianvolarevic/ChronoRevert',
   ),
@@ -93,7 +97,7 @@ export const PROJECTS = [
     '',
     ['https://www.youtube.com/embed/4EK8Z5IJFYs?si=qtjAChc6Ee0N-7xN'],
     ['img/bitenite1.jpg'],
-    'https://kvol0002.itch.io/bitenite',
+    ['https://kvol0002.itch.io/bitenite'],
   ),
 
   // ------------------------
@@ -114,7 +118,7 @@ export const PROJECTS = [
     '',
     [],
     [],
-    '',
+    [],
     'builds/3DCharacter/index.html',
   ),
 
@@ -134,7 +138,7 @@ export const PROJECTS = [
     '',
     [],
     [],
-    '',
+    [],
     'builds/3DCreature/index.html',
   ),
 
@@ -155,6 +159,8 @@ export const PROJECTS = [
     '',
     ['https://youtube.com/embed/xaA6MZCtu_g'],
     ['img/arAssignment1.jpg', 'img/arAssignment2.jpg'],
-    'https://drive.google.com/file/d/1dnoHra4Ohclh5WiqP1uGJP1uWb5pCNNe/view?usp=sharing',
+    [
+      'https://drive.google.com/file/d/1dnoHra4Ohclh5WiqP1uGJP1uWb5pCNNe/view?usp=sharing',
+    ],
   ),
 ];
